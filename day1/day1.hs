@@ -2,6 +2,7 @@ module Main where
 import qualified Data.Text as T
 import qualified Data.Text.Read as TR
 import qualified Data.Text.IO as TO
+import GHC.ResponseFile (getArgsWithResponseFiles)
 
 textToInt :: T.Text -> Int
 textToInt t =  read $ T.unpack t
@@ -14,7 +15,18 @@ calcIncreasing [] prev accum = accum
 calcIncreasing (curr:list) prev accum = if curr > prev
     then calcIncreasing list curr (accum + 1)
     else calcIncreasing list curr accum
+-- Part 2
+-- My idea for this is to take the list and create a list of triples of measurements(how do I do this?)
+makeTriple :: [Int] -> [[Int]]
+makeTriple [] = []
+makeTriple [a] = []
+makeTriple [a, b] = []
+makeTriple (a:b:c:list) = [a, b, c] : makeTriple (b:c:list)
+-- Do a sum over the triples (easy)
+
+-- Then call calcIncreasing
 main = do
-  input <- TO.readFile "./input"
+  input <- TO.readFile "./input4"
   let a = (map (read . T.unpack) $ T.lines input) :: [Int]
-  print  $ calcIncreasing (tail a) (head a) 0
+  let b = map sum (makeTriple a)
+  print  $ calcIncreasing (tail b) (head b) 0
