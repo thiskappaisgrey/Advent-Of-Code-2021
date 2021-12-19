@@ -1,3 +1,5 @@
 *.hi
 *.o
 /day1/day1
+input*
+/day3/day3

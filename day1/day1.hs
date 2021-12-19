@@ -2,7 +2,6 @@ module Main where
 import qualified Data.Text as T
 import qualified Data.Text.Read as TR
 import qualified Data.Text.IO as TO
-import GHC.ResponseFile (getArgsWithResponseFiles)
 
 textToInt :: T.Text -> Int
 textToInt t =  read $ T.unpack t

@@ -1,0 +1,5 @@
+#+TITLE: Day4
+* Idea
+- [ ] Model each board as a matrix, with elements storing the value information and the seen information. One easy data structure to use for the matrix is the Map or an n by n array(the map might be easier in Haskell, but I could try array). This makes modifying the elements constant time(faster)
+- [ ] Then, for each board, you can store information about each row and column(marking number of seen elements in each row/column)(you can do this using an array for faster indexing)
+- [ ] Then, after adding each element to each board, I can check every board to find a bingo.
