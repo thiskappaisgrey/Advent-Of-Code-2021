@@ -1,0 +1,5 @@
+#+TITLE: Advent of Code 2021
+* My solutions for Advent Of Code 2021
+- Written in Haskell
+- Attempt to implement as much of it myself (other than data structures and basic haskell methods)
+- Ideas for solutions in the comments
